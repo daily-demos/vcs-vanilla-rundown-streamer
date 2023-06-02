@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Vanilla Rundown Streamer demo</title>
+    <link rel="stylesheet" href="app.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="stream-preview">
+      </div>
+
+      <div id="stream-info-overlay">
+        This demo app has no sound.
+      </div>
+
+      <div id="stream-cover"></div>
+
+      <div id="controls">
+        <div id="guestControls">
+          <h4>Guest mode</h4>
+        </div>
+
+        <div id="hostControls">
+          <div class="controlGroup">
+            <h4>Your Rundown</h4>
+            <div class="controlRow">
+              <textarea id="rundownItems"></textarea>
+            </div>
+            <div class="controlRow">
+              Now: <span class="currentItemName" id="currentItemName"></span>
+            </div>
+            <div class="controlRow">
+              <button id="prevBtn">Prev</button>
+              <button id="nextBtn">Next</button>
+            </div>
+          </div>
+  
+          <div class="controlGroup">
+            <h4>Poll</h4>
+            <div class="controlRow">
+              <span class="desc">Poll question:</span>
+              <input type="text" id="pollQuestion" value="Do you like cake?" />
+            </div>
+            <div class="controlRow">
+              <button id="togglePollOpenBtn">Open poll to viewers</button>
+              <button id="togglePollResultBtn">Show poll result</button>
+            </div>  
+          </div>
+
+          <div class="controlGroup">
+            <h4>Guest</h4>
+            <div class="controlRow">
+              <span class="desc">Guest name:</span>
+              <input type="text" id="guestName" />
+            </div>
+            <div class="controlRow">
+              <span class="desc">Invite a guest with this link:</span>
+              <div class="shareLink" id="guestLinkString">[no link set]</div>
+              <button class="shareLinkCopy" id="copyGuestLinkBtn">Copy</button>
+            </div>  
+          </div>
+
+          <div class="controlGroup">
+            <h4>Interactive Live Stream</h4>
+            <div class="controlRow">
+              <span class="desc">Share this link for interactive viewing:</span>
+              <div class="shareLink" id="viewerLinkString">[no link set]</div>
+              <button class="shareLinkCopy" id="copyViewerLinkBtn">Copy</button>
+            </div>
+          </div>  
+
+          <div class="controlGroup">
+            <h4>Traditional Live Stream</h4>
+            <div class="controlRow">
+              <span class="desc">Streaming RTMP URL:</span>
+              <input type="text" id="streamingRtmpUrl" />
+            </div>
+            <div class="controlRow">
+              <button id="startStreamingBtn">Start streaming</button>
+            </div>
+          </div>
+  
+          <div class="controlGroup">
+            <h4>Record</h4>
+            <div class="controlRow">
+              <button id="startRecordingBtn">Start recording</button>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+
+    <div id="live-poll">
+      <div id="pollContainer">
+        <div class="pollTitle" id="pollTitle">Question:</div>
+        <div class="pollButtons">
+          <button id="pollVoteYesBtn">Yes</button>
+          <button id="pollVoteNoBtn">No</button>   
+        </div>
+      </div>
+    </div>
+
+    <div id="video-play-action-overlay">
+      <div>
+        <div class="content"></div>
+      </div>
+    </div>
+  </body>
+</html>

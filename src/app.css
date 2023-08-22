@@ -1,0 +1,164 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  --controls-w: 320px;
+}
+
+#video-play-action-overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+}
+#video-play-action-overlay > div {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+#stream-preview {
+  max-width: calc(100vw - var(--controls-w));
+  overflow: hidden;
+  width: 100%;
+  flex: 1 1;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#stream-preview.controlsOff {
+  max-width: 100vw;
+}
+
+#stream-preview .vcs-container {
+  background-color: black;
+}
+
+#stream-preview .view-test {
+  background-color: blue;
+  aspect-ratio: 16 / 9;
+}
+
+#stream-info-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+#stream-info-overlay.streamInfoFadeOut {
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+#stream-cover {
+  width: calc(100% - var(--controls-w));
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+#stream-cover.viewer {
+  width: 100%;
+}
+
+#controls {
+  min-width: var(--controls-w);
+  flex: 0;
+  background-color: #eee;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+#controls .controlGroup {
+  margin-bottom: 32px;
+  padding-right: 8px;
+}
+#controls h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+#controls .controlRow {
+  margin-bottom: 8px;
+  margin-left: 16px;
+}
+#controls .controlRow .desc {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+#controls .controlRow .currentItemName {
+  font-weight: 600;
+  color: #44c;
+}
+#controls textarea {
+  width: 100%;
+  height: 8em;
+  resize: none;
+}
+#controls input {
+  width: 100%;
+}
+
+.shareLink {
+  font-style: italic;
+  font-size: 0.85em;
+  color: #667;
+}
+button.shareLinkCopy {
+  margin-top: 0.5em;
+  font-size: 0.85em;
+}
+
+#live-poll {
+  display: none;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 240px;
+  height: auto;
+  background-color: rgba(10, 5, 70, 0.8);
+  color: white;
+  font-size: 1.05em;
+  padding: 1em;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+#live-poll .pollTitle {
+  margin-bottom: 1em;
+}
+#live-poll .pollButtons {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+#live-poll button {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.05em;
+  padding: 0.4em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}

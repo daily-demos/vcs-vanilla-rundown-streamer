@@ -61,6 +61,7 @@ Join as a viewer without the role param:
 
 ## Supporting large audiences
 
+https://docs.daily.co/guides/scaling-calls/interactive-live-streaming-rtmp-output#custom-app-configurations-to-support-100-000-participants
 
 ## Changing the composition
 
